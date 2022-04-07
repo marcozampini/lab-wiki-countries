@@ -4,7 +4,7 @@ const CountryItem = (props) => {
   return (
     <Link
       className="list-group-item list-group-item-action"
-      to={'/' + props.a3c}
+      to={'/countries/' + props.a3c}
     >
       <img
         className="country-flag"

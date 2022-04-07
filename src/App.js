@@ -22,7 +22,7 @@ function App() {
   }, [])
 
   if (countries.length === 0) {
-    return <div>Loading...</div>
+    return <div className="loading">Loading...</div>
   }
   return (
     <div className="App">
@@ -35,14 +35,23 @@ function App() {
               <Route
                 path="/"
                 element={
-                  <div className="col-5 countries-column">
+                  <div className="col-7">
                     No country selected. Please select a country.
                   </div>
                 }
               />
               <Route
-                path="/:countryId"
+                path="/countries/:countryId"
                 element={<CountryDetails countries={countries} />}
+              />
+              <Route
+                path="*"
+                element={
+                  <div className="col-7">
+                    The requested page doesn't exist. Please select a country
+                    from the list.
+                  </div>
+                }
               />
             </Routes>
           </div>

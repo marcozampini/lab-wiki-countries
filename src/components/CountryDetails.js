@@ -8,7 +8,14 @@ const CountryDetails = (props) => {
   const country = props.countries.find(
     (oneCountry) => oneCountry.alpha3Code === countryId
   )
-
+  if (country === undefined) {
+    return (
+      <div className="col-7">
+        The country code is not correct. Please check the code or select a
+        country from the list.
+      </div>
+    )
+  }
   const borderingCountries = props.countries.filter((oneCountry) =>
     country.borders.includes(oneCountry.alpha3Code)
   )
@@ -36,7 +43,7 @@ const CountryDetails = (props) => {
               <ul>
                 {borderingCountries.map((borderingCountry) => (
                   <li key={borderingCountry.alpha3Code}>
-                    <Link to={'/' + borderingCountry.alpha3Code}>
+                    <Link to={'/countries/' + borderingCountry.alpha3Code}>
                       {borderingCountry.name.common}
                     </Link>
                   </li>
