@@ -1,0 +1,8 @@
+.countries-column {
+  max-height: 80vh;
+  overflow-y: scroll;
+  text-align: left;
+}
+.country-flag {
+  height: 0.8rem;
+}
