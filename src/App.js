@@ -21,6 +21,9 @@ function App() {
     fetchCountriesData()
   }, [])
 
+  if (countries.length === 0) {
+    return <div>Loading...</div>
+  }
   return (
     <div className="App">
       <Router>
